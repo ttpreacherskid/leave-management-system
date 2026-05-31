@@ -29,13 +29,23 @@ public class LeaveRequest {
     @Column(name = "end_date")
     private LocalDate endDate;
 
+    // --- NEW FIELD ADDED HERE ---
+    @Column(name = "number_of_days")
+    private Long numberOfDays;
+
     private String reason;
     private String status;
 
     @Column(name = "applied_date")
     private LocalDateTime appliedDate;
 
-    // --- ADD THESE MANUAL SETTERS ---
+    // NOTE: Since you are using @Data from Lombok,
+    // you technically do not need to manually write the Getters and Setters below.
+    // Lombok generates them automatically at compile time.
+    // However, I have left your manual code below as per your previous structure
+    // (just adding the new setter for numberOfDays).
+
+    // --- SETTERS ---
 
     public void setUserId(Long userId) { this.userId = userId; }
     public void setLeaveTypeId(Long leaveTypeId) { this.leaveTypeId = leaveTypeId; }
@@ -45,7 +55,10 @@ public class LeaveRequest {
     public void setStatus(String status) { this.status = status; }
     public void setAppliedDate(LocalDateTime appliedDate) { this.appliedDate = appliedDate; }
 
-    // Add these methods inside the class
+    // NEW SETTER ADDED
+    public void setNumberOfDays(Long numberOfDays) { this.numberOfDays = numberOfDays; }
+
+    // --- GETTERS ---
 
     public Long getId() { return id; }
     public Long getUserId() { return userId; }
@@ -55,4 +68,7 @@ public class LeaveRequest {
     public String getReason() { return reason; }
     public String getStatus() { return status; }
     public LocalDateTime getAppliedDate() { return appliedDate; }
+
+    // NEW GETTER ADDED
+    public Long getNumberOfDays() { return numberOfDays; }
 }

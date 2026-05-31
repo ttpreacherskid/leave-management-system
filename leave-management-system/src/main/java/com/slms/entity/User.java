@@ -21,6 +21,7 @@ public class User {
     private String password;
     private String department;
     private Long roleId;
+    private Double salary; // NEW FIELD
 
     // --- SETTERS (To save data) ---
     public void setId(Long id) { this.id = id; }
@@ -31,6 +32,7 @@ public class User {
     public void setPassword(String password) { this.password = password; }
     public void setDepartment(String department) { this.department = department; }
     public void setRoleId(Long roleId) { this.roleId = roleId; }
+    public void setSalary(Double salary) { this.salary = salary; } // NEW SETTER
 
     // --- GETTERS (To display data in JSON) ---
     public Long getId() { return id; }
@@ -41,4 +43,5 @@ public class User {
     public String getPassword() { return password; }
     public String getDepartment() { return department; }
     public Long getRoleId() { return roleId; }
+    public Double getSalary() { return salary; } // NEW GETTER
 }
